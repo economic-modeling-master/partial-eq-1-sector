@@ -11,3 +11,5 @@ equilibrium. To do this, express the effects of the policy in percentage change:
    solve the tariff-increase problem in this way.
 
 Write your comments in the file `REPORT.md`.
+
+Write your solution in the file `PartialEq_sol.gms` (to create).
