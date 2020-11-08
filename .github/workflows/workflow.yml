@@ -17,7 +17,7 @@ jobs:
         run: |
           gams PartialEq.gms lo=4
           cat PartialEq.lst
-          if [-e PartialEq_sol.gms]; then
+          if [ -e PartialEq_sol.gms ]; then
             gams PartialEq_sol.gms lo=4
             cat PartialEq_sol.lst
           fi
