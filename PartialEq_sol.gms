@@ -70,5 +70,3 @@ model PE / all /;
 solve PE using cns;
 
 display QS.l, QD.l, Tr.l, PB.l, P.l;
-
-P = 5;
