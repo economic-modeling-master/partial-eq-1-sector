@@ -29,4 +29,5 @@ jobs:
         run: |
           gams PartialEq.gms
           cat PartialEq.lst
+          grep -A 2 -B 2 --color "\\$[0-9]" PartialEq.lst || true
           grep -c "\\$[0-9]" PartialEq.lst || true
