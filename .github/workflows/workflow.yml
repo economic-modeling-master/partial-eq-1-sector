@@ -15,16 +15,21 @@ jobs:
           echo "~/gams29.1_linux_x64_64_sfx" >> $GITHUB_PATH
       - name: Run GAMS
         run: |
-          gams PartialEq.gms
+          gams PartialEq.gms lo=4
           cat PartialEq.lst
           if [-e PartialEq_sol.gms]; then
-            gams PartialEq_sol.gms
+            gams PartialEq_sol.gms lo=4
             cat PartialEq_sol.lst
           fi
           grep -A 2 -B 2 --color "\\$[0-9]" *.lst || true
           grep -c "\\$[0-9]" *.lst || true
-      - name: Archive results
+      - name: Archive results (lst)
         uses: actions/upload-artifact@v2
         with:
           name: lst-files
           path: ./*.lst
+      - name: Archive results (log)
+        uses: actions/upload-artifact@v2
+        with:
+          name: log-files
+          path: ./*.log
