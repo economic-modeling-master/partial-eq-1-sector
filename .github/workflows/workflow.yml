@@ -33,3 +33,17 @@ jobs:
         with:
           name: log-files
           path: ./*.log
+      - name: Test GAMS2
+        run: |
+          for gmsfile in *.gms
+          do
+            gams ${gmsfile} lo=4
+          done
+          for lstfile in *.lst
+          do
+            cat ${lstfile}
+          done
+          grep -A 2 -B 2 --color "\\$[0-9]" *.lst || true
+          grep -c "\\$[0-9]" *.lst || true
+          
+  
