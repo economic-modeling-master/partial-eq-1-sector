@@ -20,9 +20,6 @@ jobs:
             gams ${gmsfile} lo=4
             cat ${gmsfile/gms/lst}
           done
-          for lstfile in *.lst
-          grep -A 2 -B 2 --color "\\$[0-9]" *.lst || true
-          grep -c "\\$[0-9]" *.lst || true
       - name: Archive results (lst)
         uses: actions/upload-artifact@v2
         with:
