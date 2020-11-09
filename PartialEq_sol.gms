@@ -69,4 +69,6 @@ model PE / all /;
 * Check benchmark equilibrium
 solve PE using cns;
 
+P = 4;
+
 display QS.l, QD.l, Tr.l, PB.l, P.l;
