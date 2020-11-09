@@ -38,6 +38,7 @@ jobs:
           for gmsfile in *.gms
           do
             gams ${gmsfile} lo=4
+            cat ${gmsfile/gms/lst}
           done
           for lstfile in *.lst
           do
