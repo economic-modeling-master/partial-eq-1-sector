@@ -10,6 +10,6 @@ Exercises:
 3. Express the partial equilibrium model in exact hat algebra, calibrate it and
    solve the tariff-increase problem in this way.
 
-Write your comments in the file <REPORT.md>.
+Write your comments in the file [`REPORT.md`](REPORT.md).
 
 Write your solution in the file `PartialEq_sol.gms` (to create).
