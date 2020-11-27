@@ -24,7 +24,10 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: gams-files
-          path: ./*.lst ./*.log ./*.gdx
+          path: |
+            ./*.lst
+            ./*.log
+            ./*.gdx
       - name: Archive results (lst)
         uses: actions/upload-artifact@v2
         with:
