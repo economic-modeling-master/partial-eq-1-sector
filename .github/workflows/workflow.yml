@@ -17,9 +17,14 @@ jobs:
         run: |
           for gmsfile in *.gms
           do
-            gams ${gmsfile} lo=4
-            cat ${gmsfile/gms/lst}
+            gams "${gmsfile}" lo=4
+            cat "${gmsfile/gms/lst}"
           done
+      - name: Archive results
+        uses: actions/upload-artifact@v2
+        with:
+          name: gams-files
+          path: ./*.lst ./*.log ./*.gdx
       - name: Archive results (lst)
         uses: actions/upload-artifact@v2
         with:
