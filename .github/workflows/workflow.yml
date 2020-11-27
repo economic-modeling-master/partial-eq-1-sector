@@ -23,24 +23,8 @@ jobs:
       - name: Archive results
         uses: actions/upload-artifact@v2
         with:
-          name: gams-files
+          name: gams-results-files
           path: |
             ./*.lst
             ./*.log
             ./*.gdx
-      - name: Archive results (lst)
-        uses: actions/upload-artifact@v2
-        with:
-          name: lst-files
-          path: ./*.lst
-      - name: Archive results (log)
-        uses: actions/upload-artifact@v2
-        with:
-          name: log-files
-          path: ./*.log
-      - name: Archive results (gdx)
-        uses: actions/upload-artifact@v2
-        with:
-          name: gdx-files
-          path: ./*.gdx
-  
