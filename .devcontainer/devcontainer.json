@@ -1,5 +1,6 @@
 {
-  ...
-  "build": { "dockerfile": "Dockerfile" },
-  ...
+  "name": "GAMS",
+  "build": {
+    "dockerfile": "Dockerfile",
+    }
 }
