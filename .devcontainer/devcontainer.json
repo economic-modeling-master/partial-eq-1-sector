@@ -3,5 +3,7 @@
   "build": {
     "dockerfile": "Dockerfile",
   },
-  "extensions": "lolow.gams",
+    "extensions": [
+	"lolow.gams"
+    ],
 }
