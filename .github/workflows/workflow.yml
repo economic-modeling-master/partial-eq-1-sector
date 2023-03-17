@@ -1,5 +1,10 @@
 name: Test model solution with GAMS
 
+env:
+  GAMS_MAJOR: 29
+  GAMS_MINOR: 1
+  GAMS_MAINT: 0
+
 on: [push]
 jobs:
   build:
@@ -9,10 +14,10 @@ jobs:
       - name: Install GAMS
         run: |
           cd ~
-          wget -nv https://d37drm4t2jghv5.cloudfront.net/distributions/29.1.0/linux/linux_x64_64_sfx.exe
+          wget -nv https://d37drm4t2jghv5.cloudfront.net/distributions/${GAMS_MAJOR}.${$GAMS_MINOR}.${GAMS_MAINT}/linux/linux_x64_64_sfx.exe
           chmod 755 linux_x64_64_sfx.exe
           ./linux_x64_64_sfx.exe
-          echo "~/gams29.1_linux_x64_64_sfx" >> $GITHUB_PATH
+          echo "~/gams${GAMS_MAJOR}.${$GAMS_MINOR}_linux_x64_64_sfx" >> $GITHUB_PATH
       - name: Run GAMS
         run: |
           for gmsfile in *.gms
