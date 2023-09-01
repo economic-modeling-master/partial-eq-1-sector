@@ -1,7 +1,7 @@
 $title Open economy 1 sector partial equilibrium model
 
 * Declaration of parameters
-PARAMETER
+Parameters
 * Exogenous parameters
   a   Intercept for domestic supply
   b   Slope for domestic supply
@@ -33,7 +33,7 @@ g   = Tr0-h*PB0;
 tau = P0/PB0-1;
 
 * Declaration of variables
-VARIABLE
+Variables
   QS Domestic supply
   QD Domestic demand
   Tr Trade
@@ -42,7 +42,7 @@ VARIABLE
 ;
 
 * Declaration of equations
-EQUATION
+Equations
   EQ_QS
   EQ_QD
   EQ_Tr
@@ -64,9 +64,9 @@ PB.L = PB0;
 P.L  = P0;
 
 * Model's definition: the model contains all equations
-model PE / all /;
+Model PE / all /;
 
 * Check benchmark equilibrium
-solve PE using cns;
+solve PE using CNS;
 
 display QS.l, QD.l, Tr.l, PB.l, P.l;
