@@ -1,4 +1,5 @@
 $title Open economy 1 sector partial equilibrium model
+* Model calibrated in levels
 
 * Declaration of parameters
 Parameters
