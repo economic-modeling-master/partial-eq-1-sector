@@ -1,4 +1,5 @@
 $title Open economy 1 sector partial equilibrium model
+* Model calibrated in levels
 
 * Declaration of parameters
 Parameters
@@ -9,9 +10,9 @@ Parameters
   e   Slope for domestic demand
   g   Intercept for excess supply
   h   Slope for excess supply
-  ES  Supply elasticity /  0.3   /
-  ED  Demand elasticity / -0.2   /
-  ETr Trade elasticity  / 10     /
+  ES  Supply elasticity /  0.3 /
+  ED  Demand elasticity / -0.2 /
+  ETr Trade elasticity  / 10   /
 * Policy parameters
   tau Tariff
 * Initial values
@@ -23,14 +24,14 @@ Parameters
 ;
 
 * Initialize remaining values
-Tr0 = QD0-QS0;
-b   = ES*(QS0/P0);
-e   = -ED*(QD0/P0);
-h   = ETr*(Tr0/PB0);
-a   = QS0-b*P0;
-d   = QD0+e*P0;
-g   = Tr0-h*PB0;
-tau = P0/PB0-1;
+Tr0 = QD0 - QS0;
+b   = ES * (QS0 / P0);
+e   = -ED * (QD0 / P0);
+h   = ETr * (Tr0 / PB0);
+a   = QS0 - b * P0;
+d   = QD0 + e * P0;
+g   = Tr0 - h * PB0;
+tau = P0 / PB0 - 1;
 
 * Declaration of variables
 Variables
@@ -47,14 +48,19 @@ Equations
   EQ_QD
   EQ_Tr
   EQ_PB
-  EQ_P;
+  EQ_P
+;
 
 * Definition of equations
-EQ_QS.. QS =e= a+b*P;
-EQ_QD.. QD =e= d-e*P;
-EQ_Tr.. Tr =e= g+h*PB;
-EQ_PB.. Tr =e= QD-QS;
-EQ_P..   P =e= PB*(1+tau);
+EQ_QS.. QS =e= a + b * P;
+
+EQ_QD.. QD =e= d - e * P;
+
+EQ_Tr.. Tr =e= g + h * PB;
+
+EQ_PB.. Tr =e= QD - QS;
+
+EQ_P..   P =e= PB * (1 + tau);
 
 * Initialize variable
 QS.L = QS0;
@@ -67,6 +73,6 @@ P.L  = P0;
 Model PE / all /;
 
 * Check benchmark equilibrium
-solve PE using CNS;
+solve PE using cns;
 
 display QS.l, QD.l, Tr.l, PB.l, P.l;
