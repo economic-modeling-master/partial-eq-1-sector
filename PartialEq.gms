@@ -52,15 +52,15 @@ Equations
 ;
 
 * Definition of equations
-EQ_QS.. QS =e= a + b * P;
+EQ_QS .. QS =e= a + b * P;
 
-EQ_QD.. QD =e= d - e * P;
+EQ_QD .. QD =e= d - e * P;
 
-EQ_Tr.. Tr =e= g + h * PB;
+EQ_Tr .. Tr =e= g + h * PB;
 
-EQ_PB.. Tr =e= QD - QS;
+EQ_PB .. Tr =e= QD - QS;
 
-EQ_P..   P =e= PB * (1 + tau);
+EQ_P ..   P =e= PB * (1 + tau);
 
 * Initialize variable
 QS.L = QS0;
